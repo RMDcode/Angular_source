@@ -1,0 +1,5 @@
+<app-child [MessageFromParent]="Message"></app-child>
+
+<app-child (Myevent)="MessageFromChild=$event"></app-child>
+
+<h1>{{MessageFromChild}}</h1>
