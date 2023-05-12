@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    .footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+
+</head>
+<body>
+
+
+  
+    <div class="container text-center">        
+      <img src="assets/images/shot.jpg" width="800" height="200"  alt="">
+      
+    </div>
+  
+
+
+  
+    <div class="container text-center">
+        <h3>Contact Information</h3>
+        <p>Please fill out your contact Information below.</p>
+    </div>
+  
+
+    <form [formGroup]="CustomerForm">
+      <nav class="nav-section nav-section-">
+        <div class="container">
+          <div class="form-group row">            
+          <div class="col-xs-3">
+        <label for="inputdefault">Name*</label>
+        <div>
+<input class="form-control" [class.is-invalid] = "CustomerForm.get('firstname')?.invalid && CustomerForm.get('firstname')?.touched" formControlName="firstname" ngModel pattern="[a-zA-Z ]*" placeholder="First Name" type="text" required>
+<small [class.d-none]="CustomerForm.get('firstname')?.valid || CustomerForm.get('firstname')?.untouched" class="text-danger">First Name is required </small><br></div>
+<div>
+<input class="form-control" [class.is-invalid] = "CustomerForm.get('lastname')?.invalid && CustomerForm.get('lastname')?.touched" formControlName="lastname" ngModel pattern="[a-zA-Z ]*" placeholder="Last Name" type="text" required>
+<small [class.d-none]="CustomerForm.get('lastname')?.valid || CustomerForm.get('lastname')?.untouched" class="text-danger">Last Name is required</small>    
+</div>      
+</div>
+    </div>
+    
+    <div class="form-group">
+      <label for="inputdefault">Email*</label>
+      <input class="form-control" [class.is-invalid] = "CustomerForm.get('email')?.invalid && CustomerForm.get('email')?.touched" formControlName="email" placeholder="abcde123@gmail.com" type="text" required>
+      <small [class.d-none]="CustomerForm.get('email')?.valid || CustomerForm.get('email')?.untouched" class="text-danger">Email id is required</small>
+    </div>
+
+    <div class="form-group">
+      <label for="inputdefault">Phone*</label>
+      <input class="form-control" [class.is-invalid] = "CustomerForm.get('phone')?.invalid && CustomerForm.get('phone')?.touched" formControlName="phone" placeholder="10-digits number" type="text" required>
+      <small [class.d-none]="CustomerForm.get('phone')?.valid || CustomerForm.get('phone')?.untouched" class="text-danger">Phone number is required</small>
+    </div>
+
+    <div class="form-group">
+      <label for="inputdefault">Address*</label>
+      <input class="form-control" [class.is-invalid] = "CustomerForm.get('address')?.invalid && CustomerForm.get('address')?.touched" formControlName="address" placeholder="Permanennt Address" type="text" required>
+      <small [class.d-none]="CustomerForm.get('address')?.valid || CustomerForm.get('address')?.untouched" class="text-danger">Permanennt Address is required</small>
+    </div>
+      
+    <div class="form-group">
+      <label for="inputdefault">City*</label>
+      <input class="form-control" [class.is-invalid] = "CustomerForm.get('city')?.invalid && CustomerForm.get('city')?.touched" formControlName="city" placeholder="City" type="text" required>
+      <small [class.d-none]="CustomerForm.get('city')?.valid || CustomerForm.get('city')?.untouched" class="text-danger">City is required</small>
+    </div>
+
+    <div class="form-group">
+      <label for="inputdefault">State*</label>
+      <input class="form-control" [class.is-invalid] = "CustomerForm.get('state')?.invalid && CustomerForm.get('state')?.touched" formControlName="state" placeholder="State" type="text" required>
+      <small [class.d-none]="CustomerForm.get('state')?.valid || CustomerForm.get('state')?.untouched" class="text-danger">State is required</small>
+    </div>
+
+    <div class="form-group">
+      <label for="inputdefault">Zipcode*</label>
+      <input class="form-control" [class.is-invalid] = "CustomerForm.get('zipcode')?.invalid && CustomerForm.get('zipcode')?.touched" formControlName="zipcode" placeholder="Zipcode" type="text" required>
+      <small [class.d-none]="CustomerForm.get('zipcode')?.valid || CustomerForm.get('zipcode')?.untouched" class="text-danger">Zipcode is required</small>
+    </div>
+    <div class="form-group">
+      <label for="inputdefault">Comment*</label>
+      <input class="form-control" [class.is-invalid] = "CustomerForm.get('Comment')?.invalid && CustomerForm.get('Comment')?.touched" formControlName="Comment" placeholder="Comment" type="text" required>
+      <small [class.d-none]="CustomerForm.get('Comment')?.valid || CustomerForm.get('Comment')?.untouched" class="text-danger">Comment is required</small>
+    </div>
+
+
+      <div class="col text-center">
+      <button type="button" [disabled]="CustomerForm.invalid" class="btn btn-primary" >Submit Form</button>
+      </div>
+      </div>
+  </nav>
+      </form>
+    
+  
+</body>
+</html>
