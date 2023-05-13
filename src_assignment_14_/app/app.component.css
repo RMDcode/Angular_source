@@ -1,0 +1,9 @@
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #8064A2;
+    align-content: center;
+    min-width: 250px;
+}
+.btn-secondary, .btn-secondary:hover, .btn-secondary:active, .btn-secondary:visited {
+    font-family: #8064A2;
+    align-content: center;
+}
